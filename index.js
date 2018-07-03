@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 8888;
 //add body parser middleware
 app.use(bodyParser.json());
+//setup express with cors
+app.use(cors());
 //users database
 const users = [
   { id: 1, username: 'Admin', password: 'admin' },
